@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">s -->
+        <title>Belajar Pemrograman</title>
+        <body>
+             <!-- bagian Header -->
+             <header>
+                <div class="jumbotron">
+                    <h1>Bahasa Pemrograman</h1>
+                    <p>Ada Beberapa Bahasa Pemrograman Yang Sering Dipelajari</p>
+                </div>
+               <nav>
+                  <ul>
+                     <li><a href="../Submission/index.html">Home</a></li>   
+                     <li><a href="#gambar">Gambar</a></li>   
+                     <li><a href="#catatan">Catatan</a></li>   
+                     <li><a href="#addBahasa">Bahasa</a></li>   
+                     </ul>
+               </nav>
+                </div>
+            </header>
+
+           
+            <!-- Bagian Main -->
+            <main>
+                <div class="card" style="background-image: url(assets/image/bgrd.jpg);"></div>
+               
+               <div id="content" >
+                  <article class="card" id="gambar"> 
+                     <div class="card" style="background-image: url(assets/image/bgrd.jpg);">
+
+                        <img id="image" class="featured-image" src="assets/image/java.jpg"/>
+                        <div class="card" style="background-color: bisque;">
+                           <h3>
+                              klik gambar diatas !
+                           </h3>
+                           <p>Anda sudah mengklik gambar sebanyak <span id="count"></span> kali</p>
+                        <br/>
+                        <button id="clear">Hapus Storage</button>
+                        </div>
+                     
+                        <script>
+                           const cacheKey = "NUMBER";
+                           if (typeof(Storage) !== "undefined") {
+                     
+                              // pengecekkan apakah data sessionStorage dengan key NUMBER tersedia atau belum
+                              if (localStorage.getItem(cacheKey) === "undefined") {
+                                    // Jika belum maka akan atur dengan nilai awal yakni 0
+                                    localStorage.setItem(cacheKey, 0);
+                              }
+                     
+                              const image = document.querySelector("#image");
+                              const clearButton = document.querySelector("#clear")
+                              const count = document.querySelector("#count");
+                              image.addEventListener('click', function(event) {
+                                    let number = localStorage.getItem(cacheKey);
+                                    number++;
+                                    localStorage.setItem(cacheKey, number);
+                                    count.innerText = localStorage.getItem(cacheKey);
+                              });
+                     
+                              clearButton.addEventListener('click', function(event) {
+                                    localStorage.removeItem(cacheKey);
+                              });
+                           } else {
+                              alert("Browser tidak mendukung Web Storage")
+                           }
+                        </script>
+
+                      </div>                      
+                   </article>
+
+                       <!-- article 2 -->
+                   <article class="card" id="catatan"> 
+                    <div class="card" style="background-image: url(assets/image/bgrd.jpg);">
+                       <img id="image" class="featured-image" src="assets/image/css.png"/>
+                       <div class="card" style="background-color: bisque;">
+                          <h3>
+                             Catatan Kecil Tentang IT
+                          </h3>
+                          <p>Banyak sekali bahasa pemrograman yang bisa dipelajari oleh seorang programmer. ngoding itu seru kalau kita bisa memahami apa yang akan  
+                             dibuat dan mencoba untuk mendalami bahasa yang digunakan dalam bahasa kodingan, 
+                             Dan juga ketika ditengah perjalanan project ada eror harus tetap semangat untuk menemukan eror tersebut.
+                             lebih mudah dan menyenangkan jika kita sudah bisa bersahabat dengan apa itu bahasa kodingan ;))
+                          <br/>
+                          <p>Sempet pernah terlintas sewaktu kecil, ingin jadi seorag yang bisa membuat sebuah aplikasi yang bisa bermanfaat.
+                             dan ternyata allah menakdirkan saya untuk kuliah di kampus "STT Terpadu Nurul Fikri" di jurusan "Teknik Informatika", 
+                             kemudian disitulah akhirnya saya mencoba bertekad dan membentuk mimpi untuk menjadi programmer 
+                             yang nantinya dengan ilmu yang saya miliki bisa menjadi seorang programmer yang bisa banyak bermanfaat untuk banyak orang dan
+                             termasuk juga bisa bermanfaat untuk bangsa dan negara. </p>
+                          
+                          <p>Dan saat ini kodingan sudah bisa menjadi hal asyik dan menyenangkan bagi saya, yang rasanya masih terus ingin diperdalam ilmu dalam dunia IT. 
+                             sehingga ilmunya benar-benar bisa bermanfaat, bukan hanya sekedar dipelajari dan dipahami ;)) 
+                          </p> 
+
+                          <p>Sekian.</p>
+                       </div>
+                     </div>                      
+                  </article>
+
+                   <!-- article 3 -->
+                   <article class="card" id="addBahasa"> 
+                    <div class="card" style="background-image: url(assets/image/bgrd.jpg);">
+                       <!-- <img id="image" class="featured-image" src="assets/image/css.png"/> -->
+                       <div class="card" style="background-color: bisque;">
+                        <fieldset>
+                            <legend>Tambahkan Bahasa</legend>
+                            <input type="text" name="bahasa" placeholder="Masukkan Bahasa" />
+                            <input type="button" onclick="addBahasa()" value="Submit" />
+                        </fieldset>
+                    
+                        <div>
+                            <ul id="list-bahasa">
+                            </ul>
+                        </div>
+                        
+                            <script src="assets/styles/style.js"></script>
+                       </div>
+                     </div>                      
+                  </article>
+                  </div>
+
+
+                <!-- bagian aside -->
+                <aside>
+                    <article class="profile card" style="background-image: url(assets/image/bgrd.jpg);">
+                        <header>
+                            <div class="card" style="background-color: bisque"> 
+                                <h2>Syifa Tazkiy Fauziah</h2>
+                            </div>
+                            <link rel="stylesheet" href="assets/styles/style.css">
+                            <p>Kota Bekasi</p>
+                            <figure>
+                                <img src="assets/image/syifaa.jfif">
+                                <figcaption>Syifa</figcaption>
+                            </figure>
+                        </header>
+                        <section class="card" style="background-color: bisque;">
+                            <h3>Biodata Diri</h3>
+                                <table>
+                                <tr>
+                                    <th>Negara</th>
+                                    <td>Indonesia</td>
+                                </tr>
+                                <tr>
+                                    <th>Tempat Lahir</th>
+                                    <td>Nusa Tenggara Barat</td>
+                                </tr>
+                                <tr>
+                                <th>Tanggal Lahir</th>
+                                <td>28 April 1998</td>
+                            </tr>
+                                <tr>
+                                    <th>Alamat</th>
+                                    <td>Perum Razbi Asri blok B 17 MustikaJaya
+                                        <!-- <sup></sup> --></td>
+                                </tr>
+                                <tr>
+                                    <th>Bahasa Daerah</th>
+                                    <td>Indonesia</td>
+                                </tr>
+                                <tr>
+                                    <th>No Telp</th>
+                                    <td>+62 89655700002</td>
+                                </tr>
+                                <tr>
+                                    <th>Kampus</th>
+                                    <td>STT Terpadu Nurul Fikri</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </article>
+                </aside>
+                <br/>  
+            </main>
+
+            <!-- Bagian Footer -->
+            <footer>              
+                <p >Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p >
+            </footer>
+        </body>
+    </head>
+</html>
